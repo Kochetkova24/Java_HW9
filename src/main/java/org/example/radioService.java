@@ -9,8 +9,8 @@ public class radioService {
     }
 
     public void setRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber <=9) {
-            if (newRadioStationNumber >=0) {
+        if (newRadioStationNumber <= 9) {
+            if (newRadioStationNumber >= 0) {
                 radioStationNumber = newRadioStationNumber;
             }
         }
@@ -27,7 +27,7 @@ public class radioService {
     public void prev() {
         if (radioStationNumber == 0) {
             radioStationNumber = 9;
-                    } else {
+        } else {
             radioStationNumber--;
 
         }
@@ -36,6 +36,7 @@ public class radioService {
     public int getRadioVolume() {
         return radioVolume;
     }
+
     public void setRadioStationVolume(int newRadioVolume) {
         if (newRadioVolume <= 100) {
             if (newRadioVolume >= 0) {
