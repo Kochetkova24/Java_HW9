@@ -1,13 +1,12 @@
-import org.example.radioService;
-import org.example.radioService;
+import org.example.RadioService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class radioServiceTest {
+public class RadioServiceTest {
     @Test
 
     public void shouldSetRadioStationNumber() {
-        radioService number = new radioService();
+        RadioService number = new RadioService();
 
         number.setRadioStationNumber(8);
 
@@ -19,7 +18,7 @@ public class radioServiceTest {
 
     @Test
     public void shouldNotSetRadioStationNumberAboveMax() {
-        radioService maxNumber = new radioService();
+        RadioService maxNumber = new RadioService();
 
         maxNumber.setRadioStationNumber(10);
 
@@ -31,7 +30,7 @@ public class radioServiceTest {
 
     @Test
     public void shouldNotSetRadioStationNumberAboveMin() {
-        radioService maxNumber = new radioService();
+        RadioService maxNumber = new RadioService();
 
         maxNumber.setRadioStationNumber(-10);
 
@@ -43,7 +42,7 @@ public class radioServiceTest {
 
     @Test
     public void nextTest() {
-        radioService nextNumber = new radioService();
+        RadioService nextNumber = new RadioService();
 
         nextNumber.setRadioStationNumber(8);
         nextNumber.next();
@@ -56,7 +55,7 @@ public class radioServiceTest {
 
     @Test
     public void nextStationTest() {
-        radioService nextNumber = new radioService();
+        RadioService nextNumber = new RadioService();
 
         nextNumber.setRadioStationNumber(9);
         nextNumber.next();
@@ -69,7 +68,7 @@ public class radioServiceTest {
 
     @Test
     public void prevTest() {
-        radioService nextNumber = new radioService();
+        RadioService nextNumber = new RadioService(10);
 
         nextNumber.setRadioStationNumber(8);
         nextNumber.prev();
@@ -82,7 +81,7 @@ public class radioServiceTest {
 
     @Test
     public void prevStationTest() {
-        radioService nextNumber = new radioService();
+        RadioService nextNumber = new RadioService(10);
 
         nextNumber.setRadioStationNumber(0);
         nextNumber.prev();
@@ -95,7 +94,7 @@ public class radioServiceTest {
 
     @Test
     public void shouldRadioStationVolume() {
-        radioService volume = new radioService();
+        RadioService volume = new RadioService();
 
         volume.setRadioStationVolume(8);
 
@@ -107,7 +106,7 @@ public class radioServiceTest {
 
     @Test
     public void shouldNotRadioStationVolumeAboveMax() {
-        radioService maxVolume = new radioService();
+        RadioService maxVolume = new RadioService();
 
         maxVolume.setRadioStationVolume(101);
 
@@ -119,7 +118,7 @@ public class radioServiceTest {
 
     @Test
     public void shouldNotRadioStationVolumeAboveMin() {
-        radioService minNumber = new radioService();
+        RadioService minNumber = new RadioService();
 
         minNumber.setRadioStationVolume(-10);
 
@@ -131,7 +130,7 @@ public class radioServiceTest {
 
     @Test
     public void volumeUpTest() {
-        radioService nextVolume = new radioService();
+        RadioService nextVolume = new RadioService();
 
 
         nextVolume.nextVolume();
@@ -144,7 +143,7 @@ public class radioServiceTest {
 
     @Test
     public void volumeUpMaxTest() {
-        radioService maxVolume = new radioService();
+        RadioService maxVolume = new RadioService();
 
         maxVolume.setRadioStationVolume(100);
         maxVolume.nextVolume();
@@ -157,7 +156,7 @@ public class radioServiceTest {
 
     @Test
     public void volumeTurnDownTest() {
-        radioService turnDown = new radioService();
+        RadioService turnDown = new RadioService();
 
         turnDown.setRadioStationVolume(100);
         turnDown.prevVolume();
@@ -170,7 +169,7 @@ public class radioServiceTest {
 
     @Test
     public void volumeTurnDownMinTest() {
-        radioService turnDownMin = new radioService();
+        RadioService turnDownMin = new RadioService();
 
         turnDownMin.setRadioStationVolume(0);
         turnDownMin.prevVolume();
