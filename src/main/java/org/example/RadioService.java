@@ -1,15 +1,24 @@
 package org.example;
 
-public class radioService {
+public class RadioService {
     private int radioStationNumber;
     private int radioVolume;
+    private int radioStationLimit;
+
+    public RadioService() {
+        this.radioStationLimit = 10;
+    }
+
+    public RadioService(int radioStationLimit) {
+        this.radioStationLimit = radioStationLimit;
+    }
 
     public int getRadioStationNumber() {
         return radioStationNumber;
     }
 
     public void setRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber <= 9) {
+        if (newRadioStationNumber < radioStationLimit) {
             if (newRadioStationNumber >= 0) {
                 radioStationNumber = newRadioStationNumber;
             }
@@ -17,7 +26,7 @@ public class radioService {
     }
 
     public void next() {
-        if (radioStationNumber == 9) {
+        if (radioStationNumber == radioStationLimit - 1) {
             radioStationNumber = 0;
         } else {
             radioStationNumber++;
@@ -26,7 +35,7 @@ public class radioService {
 
     public void prev() {
         if (radioStationNumber == 0) {
-            radioStationNumber = 9;
+            radioStationNumber = radioStationLimit - 1;
         } else {
             radioStationNumber--;
 
